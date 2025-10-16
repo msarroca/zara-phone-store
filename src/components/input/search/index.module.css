@@ -1,0 +1,30 @@
+/* stylelint-disable prettier/prettier */
+.input {
+  border: none;
+  border-bottom: var(--border-black-1);
+  color: var(--color-text-black);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-300);
+  padding-bottom: var(--padding-8);
+  transition: box-shadow 0.3s ease-in-out;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--color-text-light-gray);
+  }
+
+  &:focus {
+    box-shadow: var(--box-shadow-light-gray);
+    outline: none;
+  }
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    background: url("/close.svg") no-repeat 50% 50%;
+    background-size: contain;
+    cursor: pointer;
+    height: 20px;
+    opacity: 1;
+    width: 20px;
+  }
+}

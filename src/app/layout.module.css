@@ -1,0 +1,10 @@
+.layout {
+  background: var(--color-white);
+  color: var(--color-black);
+  display: grid;
+  font-family: var(--font-family);
+  grid-template-rows: auto 1fr;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

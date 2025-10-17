@@ -1,0 +1,18 @@
+.cart {
+  align-items: center;
+  display: flex;
+  gap: var(--gap-6);
+}
+
+.cartLink {
+  &:hover {
+    @media (min-width: 720px) {
+      box-shadow: var(--box-shadow-light-gray);
+    }
+  }
+}
+
+.counter {
+  font-weight: var(--font-weight-300);
+  margin-top: var(--margin-4);
+}

@@ -1,0 +1,13 @@
+.detailWrapper {
+  --size-detail-wrapper-max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-80);
+  margin: 0 auto var(--margin-154);
+  max-width: var(--size-detail-wrapper-max-width);
+
+  @media (min-width: 1200px) {
+    gap: var(--margin-154);
+  }
+}

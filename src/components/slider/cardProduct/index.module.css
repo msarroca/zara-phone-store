@@ -1,0 +1,43 @@
+.slider {
+  display: grid;
+  gap: var(--gap-40);
+}
+
+.listTitle {
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: var(--gap-1);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: var(--padding-1);
+
+  &::-webkit-scrollbar {
+    border-bottom: 1px solid var(--color-lighter-gray);
+    cursor: pointer;
+    height: 40px;
+
+    &:hover {
+      background-color: var(--color-lightest-gray);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-bottom: 1px solid var(--color-black);
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-lighter-gray);
+  }
+}
+
+.item {
+  height: 344px;
+  min-width: 344px;
+}

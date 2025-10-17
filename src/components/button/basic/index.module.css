@@ -1,0 +1,54 @@
+.buttonOutline,
+.buttonSolid,
+.buttonSimple {
+  cursor: pointer;
+  font-size: var(--font-size-12);
+  outline-offset: 4px;
+  padding: var(--padding-16);
+  text-transform: uppercase;
+}
+
+.buttonOutline {
+  background-color: var(--color-white);
+  border: var(--border-darkest-gray-1);
+  color: var(--color-black);
+}
+
+.buttonOutline:hover {
+  background-color: var(--color-lightest-gray);
+}
+
+.buttonOutline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSolid {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: var(--border-darkest-gray-1);
+}
+
+.buttonSolid:hover {
+  background-color: var(--color-darkest-gray-2);
+}
+
+.buttonSolid:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSimple {
+  background: none;
+  border: none;
+  color: var(--color-black);
+}
+
+.buttonSimple:hover {
+  text-decoration: underline;
+}
+
+.buttonSimple:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

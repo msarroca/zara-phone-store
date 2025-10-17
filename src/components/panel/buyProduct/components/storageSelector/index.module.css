@@ -1,0 +1,61 @@
+.storageSelector {
+  margin-top: var(--margin-40);
+
+  @media (min-width: 1200px) {
+    margin-top: var(--margin-64);
+  }
+}
+
+.text {
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+
+  @media (min-width: 1200px) {
+    font-size: var(--font-size-14);
+  }
+}
+
+.storageButtonGroup {
+  display: flex;
+  margin-top: var(--margin-20);
+
+  @media (min-width: 1200px) {
+    margin-top: var(--margin-24);
+  }
+}
+.storageButton,
+.storageButtonSelected {
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-300);
+  border-top: var(--border-lighter-gray-1);
+  border-right: var(--border-lighter-gray-1);
+  border-bottom: var(--border-lighter-gray-1);
+  min-width: 90px;
+  padding: var(--padding-16) var(--padding-24);
+
+  &:first-child {
+    border-left: var(--border-lighter-gray-1);
+  }
+
+  &:hover {
+    outline: var(--border-black-1);
+    outline-offset: -4px;
+  }
+
+  @media (min-width: 1200px) {
+    min-width: 95px;
+    padding: var(--padding-24);
+  }
+}
+
+.storageButtonSelected {
+  border: var(--border-black-1);
+
+  &:first-child {
+    border-left: var(--border-black-1);
+  }
+}

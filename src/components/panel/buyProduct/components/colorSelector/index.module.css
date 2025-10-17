@@ -1,0 +1,60 @@
+.colorSelector {
+  margin-top: var(--margin-32);
+
+  @media (min-width: 1200px) {
+    margin-top: var(--margin-40);
+  }
+}
+
+.text,
+.colorSelected {
+  font-weight: var(--font-weight-300);
+}
+
+.text {
+  font-size: var(--font-size-12);
+  text-transform: uppercase;
+
+  @media (min-width: 1200px) {
+    font-size: var(--font-size-14);
+  }
+}
+
+.colorSelected {
+  display: block;
+  font-size: var(--font-size-12);
+  margin-top: var(--margin-8);
+  min-height: 16px;
+}
+
+.colorButtonGroup {
+  display: flex;
+  gap: var(--gap-16);
+  margin-top: var(--margin-20);
+
+  @media (min-width: 1200px) {
+    margin-top: var(--margin-24);
+  }
+}
+
+.colorButton,
+.colorButtonSelected {
+  background: var(--color-white);
+  cursor: pointer;
+  border: var(--border-lighter-gray-1);
+  padding: var(--padding-1);
+
+  &:hover {
+    outline: var(--border-black-1);
+    outline-offset: 2px;
+  }
+}
+
+.colorButtonSelected {
+  border: var(--border-black-1);
+}
+
+.colorButtonContent {
+  height: 20px;
+  width: 20px;
+}

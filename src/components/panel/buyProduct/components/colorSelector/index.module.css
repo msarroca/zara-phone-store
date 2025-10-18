@@ -37,6 +37,10 @@
   }
 }
 
+.colorButtonSelected {
+  border: var(--border-black-1);
+}
+
 .colorButton,
 .colorButtonSelected {
   background: var(--color-white);
@@ -48,10 +52,6 @@
     outline: var(--border-black-1);
     outline-offset: 2px;
   }
-}
-
-.colorButtonSelected {
-  border: var(--border-black-1);
 }
 
 .colorButtonContent {

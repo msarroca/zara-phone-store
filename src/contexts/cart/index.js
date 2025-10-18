@@ -1,99 +1,94 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
+import {
+  getCartFromStorage,
+  setCartToStorage,
+  clearCartStorage,
+} from "@/utils";
 
-const CartContext = createContext();
+const CartContext = createContext(undefined);
+
+const getProductIdentifier = (product) => {
+  const capacityId = product.selectedCapacity?.id ?? "none";
+  const colorId = product.selectedColor?.id ?? "none";
+  return `${product.id}-${product.model}-${capacityId}-${colorId}`;
+};
 
 export const CartProvider = ({ children }) => {
-  const CART_KEY = "cart";
-
-  const [cart, setCart] = useState([]);
-
-  const getCart = () => {
-    try {
-      const stored = localStorage.getItem(CART_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  };
-
-  const setCartStorage = (newCart) => {
-    localStorage.setItem(CART_KEY, JSON.stringify(newCart));
-  };
+  const [cart, setCart] = useState(getCartFromStorage);
 
   useEffect(() => {
-    setCart(getCart());
+    setCartToStorage(cart);
+  }, [cart]);
+
+  const addToCart = useCallback((newProduct) => {
+    const newProductIdentifier = getProductIdentifier(newProduct);
+
+    setCart((currentCart) => {
+      const isInCart = currentCart.some(
+        (item) => getProductIdentifier(item) === newProductIdentifier
+      );
+
+      if (!isInCart) {
+        return [...currentCart, newProduct];
+      }
+      return currentCart;
+    });
   }, []);
 
-  const addToCart = (newProduct) => {
-    const currentCart = getCart();
+  const removeFromCart = useCallback((removedProduct) => {
+    const removedProductIdentifier = getProductIdentifier(removedProduct);
 
-    const { id, model, selectedCapacity, selectedColor } = newProduct;
+    setCart((currentCart) => {
+      return currentCart.filter(
+        (item) => getProductIdentifier(item) !== removedProductIdentifier
+      );
+    });
+  }, []);
 
-    const isInCart = currentCart.some(
-      (item) =>
-        item.id === id &&
-        item.model === model &&
-        item.selectedCapacity?.id === selectedCapacity?.id &&
-        item.selectedColor?.id === selectedColor?.id
-    );
-
-    if (!isInCart) {
-      const updatedCart = [...currentCart, newProduct];
-      setCartStorage(updatedCart);
-      setCart(updatedCart);
-    }
-  };
-
-  const removeFromCart = (removedProduct) => {
-    const currentCart = getCart();
-    const { id, model, selectedCapacity, selectedColor } = removedProduct;
-
-    const updatedCart = currentCart.filter(
-      (item) =>
-        !(
-          item.id === id &&
-          item.model === model &&
-          item.selectedCapacity?.id === selectedCapacity?.id &&
-          item.selectedColor?.id === selectedColor?.id
-        )
-    );
-
-    setCartStorage(updatedCart);
-    setCart(updatedCart);
-  };
-
-  const clearCart = () => {
-    localStorage.removeItem(CART_KEY);
+  const clearCart = useCallback(() => {
+    clearCartStorage();
     setCart([]);
-  };
+  }, []);
 
-  const cartSize = cart.length;
-  const totalPrice = cart.reduce(
-    (total, { selectedCapacity }) => total + (selectedCapacity?.price ?? 0),
-    0
+  const { cartSize, totalPrice } = useMemo(() => {
+    const size = cart.length;
+    const price = cart.reduce(
+      (total, item) => total + (item.selectedCapacity?.price ?? 0),
+      0
+    );
+    return { cartSize: size, totalPrice: price };
+  }, [cart]);
+
+  const contextValue = useMemo(
+    () => ({
+      cart,
+      cartSize,
+      totalPrice,
+      addToCart,
+      removeFromCart,
+      clearCart,
+    }),
+    [cart, cartSize, totalPrice, addToCart, removeFromCart, clearCart]
   );
 
   return (
-    <CartContext.Provider
-      value={{
-        cart,
-        cartSize,
-        totalPrice,
-        addToCart,
-        removeFromCart,
-        clearCart,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
 
 export const useCart = () => {
   const context = useContext(CartContext);
-  if (!context)
+  if (!context) {
     throw new Error("useCart debe usarse dentro de un CartProvider");
+  }
   return context;
 };

@@ -1,0 +1,38 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+  margin-top: var(--margin-40);
+}
+
+.listTitle {
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-300);
+  text-transform: uppercase;
+}
+
+.listItem {
+  border-top: var(--border-black-1);
+  display: grid;
+  gap: var(--gap-12);
+  grid-template-columns: 150px 1fr;
+  padding: var(--padding-16) 0;
+
+  @media (min-width: 720px) {
+    grid-template-columns: 300px 1fr;
+  }
+
+  &:last-child {
+    border-bottom: var(--border-black-1);
+  }
+}
+
+.listItemSpec,
+.listItemValue {
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-300);
+}
+
+.listItemSpec {
+  text-transform: uppercase;
+}

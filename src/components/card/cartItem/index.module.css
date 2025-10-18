@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  gap: var(--gap-24);
+  justify-content: flex-start;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  max-width: 200px;
+  width: 100%;
+
+  @media (min-width: 720px) {
+    max-width: 340px;
+  }
+}
+
+.image {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.info {
+  align-items: flex-start;
+  display: flex;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-300);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-40) 0;
+  text-transform: uppercase;
+}
+
+.infoCapacityAndColor {
+  margin-top: var(--margin-4);
+}
+
+.infoPrice {
+  margin-top: var(--margin-20);
+}
+
+.button {
+  margin-top: var(--margin-32);
+
+  @media (min-width: 720px) {
+    margin-top: var(--margin-154);
+  }
+}

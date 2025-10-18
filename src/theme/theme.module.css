@@ -1,0 +1,89 @@
+:root {
+  --font-family: Helvetica, Arial, sans-serif;
+
+  /* color */
+  --color-black: #000000;
+  --color-dark-gray: #79736d;
+  --color-darker-gray: #3e3e3e;
+  --color-darkest-gray: #1b1a1b;
+  --color-light-gray: #aaaaaa;
+  --color-lighter-gray: #c2bfbc;
+  --color-lightest-gray: #f3f2f2;
+  --color-red: #df0000;
+  --color-white: #ffffff;
+
+  /* border */
+  --border-black-1: 1px solid var(--color-black);
+  --border-darkest-gray-1: 1px solid var(--color-darkest-gray);
+  --border-light-gray-1: 1px solid var(--color-light-gray);
+  --border-lighter-gray-1: 1px solid var(--color-lighter-gray);
+  --border-lightest-gray-1: 1px solid var(--color-lightest-gray);
+
+  /* box-shadow */
+  --box-shadow-light-gray: 0px 8px 10px -8px var(--color-light-gray);
+
+  /* color-text */
+  --color-text-black: var(--color-black);
+  --color-text-dark-gray: var(--color-dark-gray);
+  --color-text-light-gray: var(--color-light-gray);
+  --color-text-white: var(--color-white);
+
+  /* font-size */
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+
+  /* font-weight */
+  --font-weight-300: 300;
+
+  /* gap */
+  --gap-1: 1px;
+  --gap-4: 4px;
+  --gap-6: 6px;
+  --gap-8: 8px;
+  --gap-12: 12px;
+  --gap-16: 16px;
+  --gap-24: 24px;
+  --gap-40: 40px;
+  --gap-48: 48px;
+  --gap-56: 56px;
+  --gap-64: 64px;
+  --gap-80: 80px;
+  --gap-154: 154px;
+
+  /* margin */
+  --margin-4: 4px;
+  --margin-8: 8px;
+  --margin-12: 12px;
+  --margin-16: 16px;
+  --margin-20: 20px;
+  --margin-24: 24px;
+  --margin-32: 32px;
+  --margin-40: 40px;
+  --margin-48: 48px;
+  --margin-64: 64px;
+  --margin-80: 80px;
+  --margin-110: 110px;
+  --margin-154: 154px;
+
+  /* padding */
+  --padding-1: 1px;
+  --padding-2: 2px;
+  --padding-4: 4px;
+  --padding-8: 8px;
+  --padding-12: 12px;
+  --padding-16: 16px;
+  --padding-24: 24px;
+  --padding-32: 32px;
+  --padding-40: 40px;
+  --padding-48: 48px;
+  --padding-56: 56px;
+
+  /* size */
+  --size-height-header: 80px;
+  --size-layout-max-width: 1800px;
+  --size-logo-height: 29px;
+}

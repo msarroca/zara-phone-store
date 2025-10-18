@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
-import CartStatus from './components/cartStatus'
+import CartStatus from './components/cartStatus';
 
-import styles from './index.module.css'
+import styles from './index.module.css';
 
 const HeaderBasic = () => {
   return (
@@ -13,9 +13,9 @@ const HeaderBasic = () => {
       </Link>
       <CartStatus />
     </header>
-  )
-}
+  );
+};
 
-HeaderBasic.displayName = 'HeaderBasic'
+HeaderBasic.displayName = 'HeaderBasic';
 
-export default HeaderBasic
+export default HeaderBasic;

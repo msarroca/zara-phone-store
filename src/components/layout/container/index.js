@@ -1,13 +1,13 @@
-import styles from './index.module.css'
+import styles from './index.module.css';
 
-const LayoutContainer = ({children}) => {
+const LayoutContainer = ({ children }) => {
   return (
     <main className={styles.main} role="main">
       {children}
     </main>
-  )
-}
+  );
+};
 
-LayoutContainer.displayName = 'LayoutContainer'
+LayoutContainer.displayName = 'LayoutContainer';
 
-export default LayoutContainer
+export default LayoutContainer;

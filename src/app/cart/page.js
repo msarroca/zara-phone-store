@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import {useCart} from '@/contexts/cart'
+import { useCart } from '@/contexts/cart';
 
-import ButtonBasic, {buttonBasicDesigns, buttonBasicTypes} from '@/components/button/basic'
-import ListCardCartItem from '@/components/list/cardCartItem'
+import ButtonBasic, { buttonBasicDesigns, buttonBasicTypes } from '@/components/button/basic';
+import ListCardCartItem from '@/components/list/cardCartItem';
 
-import styles from './cartPage.module.css'
+import styles from './cartPage.module.css';
 
 const CartPage = () => {
-  const {cartSize, totalPrice} = useCart()
+  const { cartSize, totalPrice } = useCart();
 
-  const areProductsInCart = cartSize > 0
+  const areProductsInCart = cartSize > 0;
 
   return (
     <div className={styles.wrapper}>
@@ -41,9 +41,9 @@ const CartPage = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-CartPage.displayName = 'CartPage'
+CartPage.displayName = 'CartPage';
 
-export default CartPage
+export default CartPage;

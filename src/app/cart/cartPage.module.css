@@ -55,15 +55,15 @@
   display: grid;
   column-gap: var(--gap-12);
   grid-template-areas:
-    "total                 total"
-    "continueShopping pay";
+    'total                 total'
+    'continueShopping pay';
   grid-template-columns: 1fr 1fr;
   row-gap: var(--gap-24);
 
   @media (min-width: 720px) {
     align-items: center;
     column-gap: var(--gap-56);
-    grid-template-areas: "continueShopping total pay";
+    grid-template-areas: 'continueShopping total pay';
     grid-template-columns: 200px 1fr 200px;
   }
 

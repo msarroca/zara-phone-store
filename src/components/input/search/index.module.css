@@ -20,7 +20,7 @@
 
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
-    background: url("/close.svg") no-repeat 50% 50%;
+    background: url('/close.svg') no-repeat 50% 50%;
     background-size: contain;
     cursor: pointer;
     height: 20px;

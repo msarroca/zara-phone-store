@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { useCart } from "@/contexts/cart";
+import { useCart } from '@/contexts/cart';
 
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
 const CartStatus = () => {
   const { cartSize } = useCart();
@@ -19,7 +19,7 @@ const CartStatus = () => {
           alt="cart icon"
           height={18}
           priority
-          src={areProductsInCart ? "/bag-solid.svg" : "/bag-outline.svg"}
+          src={areProductsInCart ? '/bag-solid.svg' : '/bag-outline.svg'}
           width={18}
         />
         <span className={styles.counter}>{cartSize?.toString()}</span>
@@ -28,6 +28,6 @@ const CartStatus = () => {
   );
 };
 
-CartStatus.displayName = "CartStatus";
+CartStatus.displayName = 'CartStatus';
 
 export default CartStatus;

@@ -1,15 +1,15 @@
 export const DESIGN_TYPES = {
   OUTLINE: 'OUTLINE',
   SIMPLE: 'SIMPLE',
-  SOLID: 'SOLID'
-}
+  SOLID: 'SOLID',
+};
 
 export const BUTTON_TYPES = {
   LINK: 'LINK',
-  BUTTON: 'BUTTON'
-}
+  BUTTON: 'BUTTON',
+};
 
 export const COLORS = {
   PRIMARY: 'PRIMARY',
-  ERROR: 'ERROR'
-}
+  ERROR: 'ERROR',
+};

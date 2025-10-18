@@ -1,16 +1,14 @@
-import { fetchProductById } from "@/services/products";
-import ListSpecs from "@/components/list/specs";
-import PanelBuyProduct from "@/components/panel/buyProduct";
-import SliderCardProduct from "@/components/slider/cardProduct";
+import { fetchProductById } from '@/services/products';
+import ListSpecs from '@/components/list/specs';
+import PanelBuyProduct from '@/components/panel/buyProduct';
+import SliderCardProduct from '@/components/slider/cardProduct';
 
-import styles from "./detailPage.module.css";
+import styles from './detailPage.module.css';
 
 const DetailPage = async ({ params }) => {
   const { productId } = await params;
 
   const product = await fetchProductById(productId);
-
-  if (Boolean(product)) return <h2>{`Oops! Something went wrong!`}</h2>;
 
   const { brand, description, name, similarProducts, specs } = product;
 
@@ -23,6 +21,6 @@ const DetailPage = async ({ params }) => {
   );
 };
 
-DetailPage.displayName = "DetailPage";
+DetailPage.displayName = 'DetailPage';
 
 export default DetailPage;

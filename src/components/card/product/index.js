@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
-import styles from './index.module.css'
+import styles from './index.module.css';
 
-const CardProduct = ({basePrice, brand, id, imageUrl, name}) => {
+const CardProduct = ({ basePrice, brand, id, imageUrl, name }) => {
   return (
     <Link className={styles.link} href="/detail/[id]" as={`/detail/${id}`}>
       <article className={styles.card}>
@@ -26,9 +26,9 @@ const CardProduct = ({basePrice, brand, id, imageUrl, name}) => {
         </div>
       </article>
     </Link>
-  )
-}
+  );
+};
 
-CardProduct.displayName = 'CardProduct'
+CardProduct.displayName = 'CardProduct';
 
-export default CardProduct
+export default CardProduct;

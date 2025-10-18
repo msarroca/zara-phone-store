@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
+import Image from 'next/image';
 
-import {useRouter} from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
-import styles from './index.module.css'
+import styles from './index.module.css';
 
 const NavigationBack = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <nav className={styles.nav}>
@@ -16,9 +16,9 @@ const NavigationBack = () => {
         <span className={styles.navButtonText}>Back</span>
       </button>
     </nav>
-  )
-}
+  );
+};
 
-NavigationBack.displayName = 'NavigationBack'
+NavigationBack.displayName = 'NavigationBack';
 
-export default NavigationBack
+export default NavigationBack;

@@ -1,4 +1,4 @@
-import NavigationBack from "@/components/navigation/back";
+import NavigationBack from '@/components/navigation/back';
 
 const DetailPageLayout = ({ children }) => {
   return (

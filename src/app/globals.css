@@ -1,4 +1,5 @@
-@import "@/theme/theme.module.css";
+/* stylelint-disable prettier/prettier */
+@import '@/theme/theme.module.css';
 
 * {
   box-sizing: border-box;

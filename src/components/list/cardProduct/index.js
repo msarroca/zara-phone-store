@@ -1,6 +1,6 @@
-import CardProduct from "@/components/card/product";
+import CardProduct from '@/components/card/product';
 
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
 const ListCardProduct = ({ products }) => {
   return (
@@ -22,6 +22,6 @@ const ListCardProduct = ({ products }) => {
   );
 };
 
-ListCardProduct.displayName = "ListCardProduct";
+ListCardProduct.displayName = 'ListCardProduct';
 
 export default ListCardProduct;

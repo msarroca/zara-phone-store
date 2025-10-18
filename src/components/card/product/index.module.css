@@ -17,7 +17,7 @@
     &:before {
       background-color: var(--color-light-gray);
       bottom: 0;
-      content: "";
+      content: '';
       left: 0;
       height: 0%;
       position: absolute;

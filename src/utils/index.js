@@ -9,8 +9,7 @@ export const getCartFromStorage = () => {
     const stored = localStorage.getItem(CART_KEY);
     return stored ? JSON.parse(stored) : [];
   } catch (error) {
-    console.error("Error al leer el carrito de localStorage:", error);
-    return [];
+    throw new Error("Error getting card ");
   }
 };
 
@@ -19,7 +18,7 @@ export const setCartToStorage = (newCart) => {
     if (typeof window === "undefined") return;
     localStorage.setItem(CART_KEY, JSON.stringify(newCart));
   } catch (error) {
-    console.error("Error al guardar el carrito en localStorage:", error);
+    throw new Error("Error setting card ");
   }
 };
 
@@ -28,6 +27,6 @@ export const clearCartStorage = () => {
     if (typeof window === "undefined") return;
     localStorage.removeItem(CART_KEY);
   } catch (error) {
-    console.error("Error al borrar el carrito de localStorage:", error);
+    throw new Error("Error clearing card ");
   }
 };

@@ -10,6 +10,8 @@ const DetailPage = async ({ params }) => {
 
   const product = await fetchProductById(productId);
 
+  if (Boolean(product)) return <h2>{`Oops! Something went wrong!`}</h2>;
+
   const { brand, description, name, similarProducts, specs } = product;
 
   return (

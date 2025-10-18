@@ -8,6 +8,8 @@ import styles from "./page.module.css";
 const HomePage = async () => {
   const products = await fetchProducts();
 
+  if (Boolean(products)) return <h2>{`Oops! Something went wrong!`}</h2>;
+
   return (
     <div className={styles.page}>
       <div className={styles.searchWrapper}>

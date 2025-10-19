@@ -5,8 +5,9 @@ import ListCardProduct from '@/components/list/cardProduct';
 
 import styles from './page.module.css';
 
-const HomePage = async () => {
-  const products = await fetchProducts();
+const HomePage = async ({ searchParams }) => {
+  const searchValue = (await searchParams).search;
+  const products = await fetchProducts({ query: searchValue });
 
   return (
     <div className={styles.page}>

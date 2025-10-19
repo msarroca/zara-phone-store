@@ -35,7 +35,7 @@ describe('InputSearch integration', () => {
     pushMock.mockClear();
 
     const input = screen.getByRole('searchbox', {
-      name: /search for a smartphone/i,
+      name: /Search smartphone/i,
     });
 
     expect(input.value).toBe('Galaxy');

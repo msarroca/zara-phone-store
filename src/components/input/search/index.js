@@ -34,11 +34,11 @@ const InputSearch = () => {
   return (
     <form role="search" onSubmit={handleFormSubmit}>
       <input
-        aria-label="Search for a smartphone"
+        aria-label="Search smartphone"
         className={styles.input}
         name="search"
         onChange={(event) => setSearchValue(event.target.value)}
-        placeholder="Search for a smartphone..."
+        placeholder="Search smartphone..."
         spellCheck="false"
         type="search"
         value={searchValue ?? ''}

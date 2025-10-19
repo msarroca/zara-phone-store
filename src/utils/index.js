@@ -19,12 +19,3 @@ export const setCartToStorage = (newCart) => {
     throw new Error('Error setting card ');
   }
 };
-
-export const clearCartStorage = () => {
-  try {
-    if (typeof window === 'undefined') return;
-    localStorage.removeItem(CART_KEY);
-  } catch (error) {
-    throw new Error('Error clearing card ');
-  }
-};

@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
-import { getCartFromStorage, setCartToStorage, clearCartStorage } from '@/utils';
+import { getCartFromStorage, setCartToStorage } from '@/utils';
 
 const CartContext = createContext(undefined);
 
@@ -43,11 +43,6 @@ export const CartProvider = ({ children }) => {
     );
   }, []);
 
-  const clearCart = useCallback(() => {
-    clearCartStorage();
-    setCart([]);
-  }, []);
-
   const { cartSize, totalPrice } = useMemo(() => {
     const size = cart.length;
     const price = cart.reduce((total, item) => total + (item.selectedCapacity?.price ?? 0), 0);
@@ -61,9 +56,8 @@ export const CartProvider = ({ children }) => {
       totalPrice,
       addToCart,
       removeFromCart,
-      clearCart,
     }),
-    [cart, cartSize, totalPrice, addToCart, removeFromCart, clearCart],
+    [cart, cartSize, totalPrice, addToCart, removeFromCart],
   );
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
@@ -72,7 +66,7 @@ export const CartProvider = ({ children }) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart debe usarse dentro de un CartProvider');
+    throw new Error('useCart must be used within a CartProvider');
   }
   return context;
 };

@@ -12,7 +12,12 @@ const getProductIdentifier = (product) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(getCartFromStorage);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = getCartFromStorage() ?? [];
+    setCart(storedCart);
+  }, []);
 
   useEffect(() => {
     setCartToStorage(cart);
@@ -20,12 +25,10 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = useCallback((newProduct) => {
     const newProductIdentifier = getProductIdentifier(newProduct);
-
     setCart((currentCart) => {
       const isInCart = currentCart.some(
         (item) => getProductIdentifier(item) === newProductIdentifier,
       );
-
       if (!isInCart) {
         return [...currentCart, newProduct];
       }
@@ -35,10 +38,9 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = useCallback((removedProduct) => {
     const removedProductIdentifier = getProductIdentifier(removedProduct);
-
-    setCart((currentCart) => {
-      return currentCart.filter((item) => getProductIdentifier(item) !== removedProductIdentifier);
-    });
+    setCart((currentCart) =>
+      currentCart.filter((item) => getProductIdentifier(item) !== removedProductIdentifier),
+    );
   }, []);
 
   const clearCart = useCallback(() => {

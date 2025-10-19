@@ -30,7 +30,7 @@
 }
 
 .buttonSolid:hover {
-  background-color: var(--color-darkest-gray-2);
+  background-color: var(--color-dark-gray);
 }
 
 .buttonSolid:disabled {

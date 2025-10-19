@@ -29,7 +29,7 @@
     }
 
     &:hover:before {
-      background-color: var(--color-black);
+      background-color: var(--color-light-gray);
       height: 100%;
 
       transition:
@@ -38,8 +38,13 @@
     }
 
     &:hover .infoName,
-    &:hover .infoPrice {
-      color: var(--color-text-light-gray);
+    &:hover .infoPrice,
+    &:hover .infoBrand {
+      color: var(--color-black);
+    }
+
+    &:hover .infoBrand {
+      color: var(--color-white);
     }
   }
 }

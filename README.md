@@ -121,7 +121,7 @@ API calls are implemented with the **native Fetch API**, handling errors through
 The shopping cart is stored in:
 
 ```bash
-localStorage.setItem('cart:v1', JSON.stringify(cart))
+localStorage.setItem('cart', JSON.stringify(cart))
 ```
 
 ---

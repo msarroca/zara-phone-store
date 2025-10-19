@@ -160,7 +160,7 @@ localStorage.setItem('cart:v1', JSON.stringify(cart))
 
 **Marc Sarroca Díaz**  
 Frontend & Mobile Developer  
-📧 [marcsarroca.dev@gmail.com](mailto:m.sarroca@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/msarroca-diaz) — [GitHub](https://github.com/msarroca)
+📧 [m.sarroca@gmail.com](mailto:m.sarroca@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/msarroca-diaz)
 
 ---

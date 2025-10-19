@@ -3,7 +3,6 @@ const BASE_URL =
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY ?? '87909682e6cd74208f41a6ef39fe4191';
 
 export const fetchProducts = async ({ query }) => {
-  // 🔹 Construcción segura de los parámetros
   const urlSearchParams = new URLSearchParams();
 
   if (query !== undefined) urlSearchParams.append('search', query);

@@ -3,6 +3,8 @@
 Project developed as a **technical test for the Frontend Developer position** at **Inditex Group**.  
 This web application simulates an online mobile phone store, featuring **product listing, product detail, search, persistent shopping cart, and hybrid SSR/CSR rendering** using **Next.js 15**.
 
+🌐 [Live demo on Vercel](https://zara-phone-store.vercel.app/)
+
 ---
 
 ## 🚀 Tech Stack
